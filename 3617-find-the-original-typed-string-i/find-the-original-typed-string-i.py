@@ -9,7 +9,7 @@ class Solution(object):
         # 
 
         output = len(word)
-        for i, letter in enumerate(word[1:]):
-            if letter != word[i]:
+        for i in range(1, len(word)):
+            if word[i] != word[i-1]:
                 output -= 1
         return output
