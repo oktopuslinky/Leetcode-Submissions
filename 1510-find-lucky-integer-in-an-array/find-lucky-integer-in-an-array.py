@@ -4,7 +4,7 @@ class Solution(object):
         :type arr: List[int]
         :rtype: int
         """
-        arr.sort(reverse=True)
+        #arr.sort(reverse=True)
         freqs = {}
         for integer in arr:
             freqs[integer] = freqs.get(integer, 0) + 1
