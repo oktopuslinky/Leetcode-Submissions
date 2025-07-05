@@ -9,8 +9,8 @@ class Solution(object):
             freqs[integer] = freqs.get(integer, 0) + 1
         
         largest_lucky = -1
-        for integer, freq in reversed(list(freqs.items())):
-            if integer == freq:
+        for integer in reversed(freqs.keys()):
+            if integer == freqs[integer]:
                 return integer
                 #largest_lucky = max(largest_lucky, integer)
         
