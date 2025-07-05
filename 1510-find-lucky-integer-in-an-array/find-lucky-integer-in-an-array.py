@@ -4,12 +4,21 @@ class Solution(object):
         :type arr: List[int]
         :rtype: int
         """
-        freqs = {}
-        for integer in arr:
-            freqs[integer] = freqs.get(integer, 0) + 1
+        arr.sort(reverse=True)
+        curNum = -1
+        curCount = 0
+        for num in arr:
+            if num == curNum:
+                curCount += 1
+            else:
+                if curNum == curCount:
+                    return curNum
+                else:
+                    curNum = num
+                    curCount = 1
+            
+            print num, curNum, curCount
         
-        for integer in reversed(freqs.keys()) :
-            if integer == freqs[integer]:
-                return integer
-        
+        if curNum == curCount:
+            return curNum
         return -1
