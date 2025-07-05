@@ -16,9 +16,7 @@ class Solution(object):
                 else:
                     curNum = num
                     curCount = 1
-            
-            print num, curNum, curCount
-        
+                    
         if curNum == curCount:
             return curNum
         return -1
