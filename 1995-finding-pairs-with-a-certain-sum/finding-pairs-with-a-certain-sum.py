@@ -24,7 +24,11 @@ class FindSumPairs(object):
         self.nums2Count[changeVal] -= 1
         changeVal += val
         self.nums2[index] = changeVal
-        self.nums2Count[changeVal] = self.nums2Count.get(changeVal, 0) + 1
+        if changeVal in self.nums2Count:
+            self.nums2Count[changeVal] += 1
+        else:
+            self.nums2Count[changeVal] = 1
+        #self.nums2Count[changeVal] = self.nums2Count.get(changeVal, 0) + 1
 
     def count(self, tot):
         """
