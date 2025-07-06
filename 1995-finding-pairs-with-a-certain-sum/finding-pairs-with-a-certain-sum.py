@@ -7,11 +7,19 @@ class FindSumPairs(object):
         """
         self.nums1 = {}
         for num in nums1:
-            self.nums1[num] = self.nums1.get(num, 0) + 1
+            if num in self.nums1:
+                self.nums1[num] += 1
+            else:
+                self.nums1[num] = 1
+            #self.nums1[num] = self.nums1.get(num, 0) + 1
         self.nums2 = nums2
         self.nums2Count = {}
         for num in nums2:
-            self.nums2Count[num] = self.nums2Count.get(num, 0) + 1
+            if num in self.nums2Count:
+                self.nums2Count[num] += 1
+            else:
+                self.nums2Count[num] = 1
+            #self.nums2Count[num] = self.nums2Count.get(num, 0) + 1
 
     def add(self, index, val):
         """
@@ -24,11 +32,10 @@ class FindSumPairs(object):
         self.nums2Count[changeVal] -= 1
         changeVal += val
         self.nums2[index] = changeVal
-        '''if changeVal in self.nums2Count:
+        if changeVal in self.nums2Count:
             self.nums2Count[changeVal] += 1
         else:
-            self.nums2Count[changeVal] = 1'''
-        self.nums2Count[changeVal] = self.nums2Count.get(changeVal, 0) + 1
+            self.nums2Count[changeVal] = 1
 
     def count(self, tot):
         """
