@@ -4,7 +4,8 @@ class Solution(object):
         :type nums: List[int]
         :type original: int
         :rtype: int
-        """        
+        """
+        nums = set(nums)        
         for num in nums:
             if original in nums:
                 original *= 2
