@@ -12,7 +12,6 @@ class NumArray(object):
 
         for num in nums[1:]:
             self.prefixes.append(self.prefixes[-1]+num)
-        print self.prefixes
 
     def sumRange(self, left, right):
         """
