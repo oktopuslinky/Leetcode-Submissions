@@ -8,5 +8,4 @@ class Solution(object):
         nums = set(nums)
         while original in nums:
             original = original << 1
-            print original
         return original
