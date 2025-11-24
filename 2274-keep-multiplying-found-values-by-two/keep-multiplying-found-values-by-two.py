@@ -5,10 +5,8 @@ class Solution(object):
         :type original: int
         :rtype: int
         """
-        nums = set(nums)        
-        for num in nums:
-            if original in nums:
-                original *= 2
-            else:
-                return original
+        nums = set(nums)
+        while original in nums:
+            original = original << 1
+            print original
         return original
