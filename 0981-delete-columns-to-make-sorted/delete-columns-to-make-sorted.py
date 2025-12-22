@@ -10,7 +10,6 @@ class Solution(object):
         for i in range(1, len(strs)):
             for col in cols_to_consider:
                 if strs[i][col] < strs[i-1][col]:
-                    print col, strs[i], strs[i-1]
                     cols_to_consider.remove(col)
         
         return word_len - len(cols_to_consider)
