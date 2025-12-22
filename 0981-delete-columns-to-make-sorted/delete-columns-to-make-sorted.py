@@ -4,18 +4,13 @@ class Solution(object):
         :type strs: List[str]
         :rtype: int
         """
-        
         word_len = len(strs[0])
-        columns = [[] for _ in range(word_len)]
-        for string in strs:
-            for col in range(len(string)):
-                columns[col] += string[col]
+        cols_to_consider = [_ for _ in range(word_len)]
         
-        to_delete = 0
-
-        for col in columns:
-            if col != sorted(col):
-                print col, sorted(col)
-                to_delete += 1
+        for i in range(1, len(strs)):
+            for col in cols_to_consider:
+                if strs[i][col] < strs[i-1][col]:
+                    print col, strs[i], strs[i-1]
+                    cols_to_consider.remove(col)
         
-        return to_delete
+        return word_len - len(cols_to_consider)
