@@ -12,5 +12,4 @@ class Solution(object):
         for i in range(len(t)):
             t_letters[t[i]] = t_letters.get(t[i], 0) + 1
         
-        print s_letters, t_letters
         return s_letters == t_letters
