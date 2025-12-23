@@ -4,5 +4,4 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        unique = set(nums)
-        return len(unique) != len(nums)
+        return len(set(nums)) != len(nums)
