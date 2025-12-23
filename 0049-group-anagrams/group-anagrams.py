@@ -6,22 +6,11 @@ class Solution(object):
         """
         
         groups = {}
-        output_groups = []
 
         for string in strs:
-            string_hash = {}
-            for letter in string:
-                string_hash[letter] = string_hash.get(letter, 0) + 1
-            
-            found = False
+            string_group = "".join(sorted(string))
+            if string_group not in groups:
+                groups[string_group] = []
+            groups[string_group].append(string)
 
-            for group in groups.items():
-                if group[1] == string_hash:
-                    found = True
-                    output_groups[group[0]].append(string)
-            
-            if not found:
-                groups[len(groups)] = string_hash
-                output_groups.append([string])
-
-        return output_groups
+        return groups.values()
