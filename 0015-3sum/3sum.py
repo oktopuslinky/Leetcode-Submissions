@@ -10,6 +10,8 @@ class Solution(object):
         #print nums
 
         for i, num in enumerate(nums[:-2]):
+            if i > 0 and num == nums[i-1]:
+                continue
             target = -num
             l, r = i+1, len(nums)-1
             while l < r:
@@ -22,7 +24,7 @@ class Solution(object):
                     l += 1
                 if nums[l] + nums[r] == target and l != r:
                     to_add = [nums[i], nums[l], nums[r]]
-                    if to_add not in triplets:
+                    if to_add not in triplets[len(triplets)-2:]:
                         triplets.append(to_add)
                     l += 1
                     r -= 1
