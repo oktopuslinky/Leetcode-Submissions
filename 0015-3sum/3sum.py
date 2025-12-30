@@ -7,7 +7,7 @@ class Solution(object):
         triplets = set()
         nums.sort()
 
-        print nums
+        #print nums
 
         for i, num in enumerate(nums[:-2]):
             target = -num
