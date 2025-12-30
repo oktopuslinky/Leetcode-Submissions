@@ -4,7 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        triplets = set()
+        triplets = []
         nums.sort()
 
         #print nums
@@ -21,7 +21,9 @@ class Solution(object):
                     #print(l, r, target, '<')
                     l += 1
                 if nums[l] + nums[r] == target and l != r:
-                    triplets.add((nums[i], nums[l], nums[r]))
+                    to_add = [nums[i], nums[l], nums[r]]
+                    if to_add not in triplets:
+                        triplets.append(to_add)
                     l += 1
                     r -= 1
-        return [list(_) for _ in triplets]
+        return triplets
